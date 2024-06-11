@@ -1,0 +1,2 @@
+com.arthur.boot.autoconfigure.ArthurBootAutoConfiguration
+com.arthur.boot.autoconfigure.ApplicationLifecycleAutoConfiguration

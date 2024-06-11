@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "arthur.event",
+      "type": "autoconfigure.com.arthur.boot.event.ArthurEventProperties",
+      "sourceType": "autoconfigure.com.arthur.boot.event.ArthurEventProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "arthur.event.ring-buffer-size",
+      "type": "java.lang.Integer",
+      "sourceType": "autoconfigure.com.arthur.boot.event.ArthurEventProperties"
+    },
+    {
+      "name": "arthur.event.thread-size",
+      "type": "java.lang.Integer",
+      "sourceType": "autoconfigure.com.arthur.boot.event.ArthurEventProperties"
+    }
+  ],
+  "hints": []
+}

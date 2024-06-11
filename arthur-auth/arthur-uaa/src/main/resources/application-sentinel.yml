@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    sentinel:
+      # 直接与Sentinel建立心跳连接,访问sentinel 控制台就可以看到服务连接情况，不需要第一次访问应用的某个接口，才连接sentinel
+      eager: true
+      transport:
+        dashboard: 192.168.5.153:9600
+        heartbeat-interval-ms: 10000

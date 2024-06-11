@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: arthur
+  profiles:
+    group:
+      prod: log, tcp, gateway, arthur, redis, actuator, circuitbreaker
+    active: prod
+  codec:
+    # headers 不要被掩码
+    log-request-details: true
+  cloud:
+    nacos:
+      username: nacos
+      password: nacos
+      server-addr: 192.168.5.153:8848
+      discovery:
+        instance-enabled: false
+        failure-tolerance-enabled: true
+  lifecycle:
+    timeout-per-shutdown-phase: 30s
+server:
+  shutdown: GRACEFUL
+  port: 8080

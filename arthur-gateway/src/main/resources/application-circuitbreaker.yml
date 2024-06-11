@@ -1,0 +1,89 @@
+circuitbreaker:
+  groupId: GATEWAY_SENTINEL_GROUP
+  dataId-prefix: sentinel
+  dataId-suffix: rules.json
+  namespace: public
+spring:
+  cloud:
+    sentinel:
+      # 直接与Sentinel建立心跳连接,访问sentinel 控制台就可以看到服务连接情况，不需要第一次访问应用的某个接口，才连接sentinel
+      eager: true
+      transport:
+        dashboard: 192.168.5.153:9600
+        heartbeat-interval-ms: 10000
+        client-ip: 192.168.2.43
+      scg:
+        fallback:
+          mode: response
+          response-body: '{"code": "429", "msg": "the fallback success, please check your service status!"}'
+      filter:
+        enabled: false
+      log:
+        dir: ${logging.file.path}
+      metric:
+        file-single-size: 1024 * 1024 * 50
+        file-total-count: 7
+      datasource:
+        gw-api-group:
+          nacos:
+            server-addr: ${spring.cloud.nacos.server-addr}
+            username: ${spring.cloud.nacos.username}
+            password: ${spring.cloud.nacos.password}
+            dataId: ${circuitbreaker.dataId-prefix}-api-${circuitbreaker.dataId-suffix}
+            groupId: ${circuitbreaker.groupId}
+            namespace: ${circuitbreaker.namespace}
+            rule-type: gw-api-group
+#        flow:
+#          nacos:
+#            server-addr: ${spring.cloud.nacos.username}
+#            username: ${spring.cloud.nacos.username}
+#            password: ${spring.cloud.nacos.password}
+#            dataId: ${circuitbreaker.dataId-prefix}-${spring.cloud.sentinel.datasource.flow.nacos.rule-type}-${circuitbreaker.dataId-suffix}
+#            groupId: ${circuitbreaker.groupId}
+#            namespace: ${circuitbreaker.namespace}
+#            rule-type: flow
+        gw-flow:
+          nacos:
+            server-addr: ${spring.cloud.nacos.server-addr}
+            username: ${spring.cloud.nacos.username}
+            password: ${spring.cloud.nacos.password}
+            dataId: ${circuitbreaker.dataId-prefix}-flow-${circuitbreaker.dataId-suffix}
+            groupId: ${circuitbreaker.groupId}
+            namespace: ${circuitbreaker.namespace}
+            rule-type: gw-flow
+        degrade:
+          nacos:
+            server-addr: ${spring.cloud.nacos.server-addr}
+            username: ${spring.cloud.nacos.username}
+            password: ${spring.cloud.nacos.password}
+            dataId: ${circuitbreaker.dataId-prefix}-degrade-${circuitbreaker.dataId-suffix}
+            groupId: ${circuitbreaker.groupId}
+            namespace: ${circuitbreaker.namespace}
+            rule-type: degrade
+        system:
+          nacos:
+            server-addr: ${spring.cloud.nacos.server-addr}
+            username: ${spring.cloud.nacos.username}
+            password: ${spring.cloud.nacos.password}
+            dataId: ${circuitbreaker.dataId-prefix}-system-${circuitbreaker.dataId-suffix}
+            groupId: ${circuitbreaker.groupId}
+            namespace: ${circuitbreaker.namespace}
+            rule-type: system
+#        authority:
+#          nacos:
+#            server-addr: ${spring.cloud.nacos.server-addr}
+#            username: ${spring.cloud.nacos.username}
+#            password: ${spring.cloud.nacos.password}
+#            dataId: ${circuitbreaker.dataId-prefix}-${spring.cloud.sentinel.datasource.flow.nacos.rule-type}-${circuitbreaker.dataId-suffix}
+#            groupId: ${circuitbreaker.groupId}
+#            namespace: ${circuitbreaker.namespace}
+#            rule-type: authority
+#        param-flow:
+#          nacos:
+#            server-addr: ${spring.cloud.nacos.server-addr}
+#            username: ${spring.cloud.nacos.username}
+#            password: ${spring.cloud.nacos.password}
+#            dataId: ${circuitbreaker.dataId-prefix}-${spring.cloud.sentinel.datasource.flow.nacos.rule-type}-${circuitbreaker.dataId-suffix}
+#            groupId: ${circuitbreaker.groupId}
+#            namespace: ${circuitbreaker.namespace}
+#            rule-type: param-flow

@@ -1,0 +1,5 @@
+# Application AutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.arthur.sentinel.autoconfigure.SentinelWebAutoConfiguration,\
+com.arthur.sentinel.autoconfigure.SentinelWebfluxAutoConfiguration,\
+com.arthur.sentinel.autoconfigure.SentinelGatewayAutoConfiguration

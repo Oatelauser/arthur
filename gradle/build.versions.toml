@@ -1,0 +1,40 @@
+[versions]
+# 统一BOM版本
+spring_boot_version = "3.1.2"
+spring_cloud_version = "2022.0.4"
+spring_cloud_alibaba_version = "2022.0.0.0"
+# 插件版本
+plugin_jmh_version = "0.6.6"
+plugin_spotbugs_version = "5.0.5"
+plugin_versions_version = "0.41.0"
+plugin_japicmp_version = "0.3.0"
+plugin_profiles_version = "0.47.0"
+plugin_shadow_version = "7.1.2"
+plugin_kotlin_version = "1.6.10"
+# AnnotationProcessor
+lombok_mapstruct_version = "0.2.0"
+mapstruct_version = "1.5.4.Final"
+
+
+[libraries]
+# 统一BOM依赖
+springBootDependencies = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "spring_boot_version" }
+springCloudDependencies = { module = "org.springframework.cloud:spring-cloud-dependencies", version.ref = "spring_cloud_version" }
+springCloudAlibabaDependencies = { module = "com.alibaba.cloud:spring-cloud-alibaba-dependencies", version.ref = "spring_cloud_alibaba_version" }
+
+# MapStruct
+mapstruct = {module="org.mapstruct:mapstruct", version.ref = "mapstruct_version"}
+mapstructProcessor = { module = "org.mapstruct:mapstruct-processor", version.ref = "mapstruct_version" }
+lombokMapstructBinding = { module = "org.projectlombok:lombok-mapstruct-binding", version.ref = "lombok_mapstruct_version" }
+
+# 插件依赖
+pluginJmh = { module = "me.champeau.jmh:jmh-gradle-plugin", version.ref = "plugin_jmh_version" }
+pluginSpotbugs = { module = "com.github.spotbugs.snom:spotbugs-gradle-plugin", version.ref = "plugin_spotbugs_version" }
+pluginVersions = { module = "com.github.ben-manes:gradle-versions-plugin", version.ref = "plugin_versions_version" }
+pluginJapicmp = { module = "me.champeau.gradle:japicmp-gradle-plugin", version.ref = "plugin_japicmp_version" }
+pluginProfiles = { module = "org.kordamp.gradle:profiles-gradle-plugin", version.ref = "plugin_profiles_version" }
+pluginShadow = { module = "gradle.plugin.com.github.johnrengelman:shadow", version.ref = "plugin_shadow_version" }
+pluginKotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "plugin_kotlin_version" }
+
+[plugins]
+springboot = { id = "org.springframework.boot", version.ref = "spring_boot_version" }

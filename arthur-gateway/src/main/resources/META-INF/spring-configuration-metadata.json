@@ -1,0 +1,318 @@
+{
+  "groups": [
+    {
+      "name": "arthur",
+      "type": "autoconfigure.com.arthur.gateway.ArthurProperties",
+      "sourceType": "autoconfigure.com.arthur.gateway.ArthurProperties"
+    },
+    {
+      "name": "arthur.accesslog",
+      "type": "autoconfigure.com.arthur.gateway.ArthurProperties$AccessLogConfig",
+      "sourceType": "autoconfigure.com.arthur.gateway.ArthurProperties",
+      "sourceMethod": "getAccesslog()"
+    },
+    {
+      "name": "arthur.cross",
+      "type": "autoconfigure.com.arthur.gateway.ArthurProperties$CrossFilterConfig",
+      "sourceType": "autoconfigure.com.arthur.gateway.ArthurProperties",
+      "sourceMethod": "getCross()"
+    },
+    {
+      "name": "arthur.exclude",
+      "type": "autoconfigure.com.arthur.gateway.ArthurProperties$ExcludePathConfig",
+      "sourceType": "autoconfigure.com.arthur.gateway.ArthurProperties",
+      "sourceMethod": "getExclude()"
+    },
+    {
+      "name": "arthur.fallback",
+      "type": "autoconfigure.com.arthur.gateway.ArthurProperties$FallbackPath",
+      "sourceType": "autoconfigure.com.arthur.gateway.ArthurProperties",
+      "sourceMethod": "getFallback()"
+    },
+    {
+      "name": "arthur.file",
+      "type": "autoconfigure.com.arthur.gateway.ArthurProperties$FileConfig",
+      "sourceType": "autoconfigure.com.arthur.gateway.ArthurProperties",
+      "sourceMethod": "getFile()"
+    },
+    {
+      "name": "arthur.local",
+      "type": "autoconfigure.com.arthur.gateway.ArthurProperties$Local",
+      "sourceType": "autoconfigure.com.arthur.gateway.ArthurProperties",
+      "sourceMethod": "getLocal()"
+    },
+    {
+      "name": "netty.tcp",
+      "type": "autoconfigure.com.arthur.gateway.NettyTcpProperties",
+      "sourceType": "autoconfigure.com.arthur.gateway.NettyTcpProperties"
+    },
+    {
+      "name": "netty.tcp.server-socket-channel",
+      "type": "autoconfigure.com.arthur.gateway.NettyTcpProperties$ServerSocketChannelProperties",
+      "sourceType": "autoconfigure.com.arthur.gateway.NettyTcpProperties",
+      "sourceMethod": "getServerSocketChannel()"
+    },
+    {
+      "name": "netty.tcp.socket-channel",
+      "type": "autoconfigure.com.arthur.gateway.NettyTcpProperties$SocketChannelProperties",
+      "sourceType": "autoconfigure.com.arthur.gateway.NettyTcpProperties",
+      "sourceMethod": "getSocketChannel()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "arthur.accesslog.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "autoconfigure.com.arthur.gateway.ArthurProperties$AccessLogConfig",
+      "defaultValue": false
+    },
+    {
+      "name": "arthur.cross.allow-credentials",
+      "type": "java.lang.Boolean",
+      "sourceType": "autoconfigure.com.arthur.gateway.ArthurProperties$CrossFilterConfig",
+      "defaultValue": true
+    },
+    {
+      "name": "arthur.cross.allowed-expose",
+      "type": "java.lang.String",
+      "sourceType": "autoconfigure.com.arthur.gateway.ArthurProperties$CrossFilterConfig",
+      "defaultValue": "*"
+    },
+    {
+      "name": "arthur.cross.allowed-headers",
+      "type": "java.lang.String",
+      "description": "Comma-separated of “header”.",
+      "sourceType": "autoconfigure.com.arthur.gateway.ArthurProperties$CrossFilterConfig",
+      "defaultValue": ""
+    },
+    {
+      "name": "arthur.cross.allowed-methods",
+      "type": "java.lang.String",
+      "description": "Comma-separated of “method”.",
+      "sourceType": "autoconfigure.com.arthur.gateway.ArthurProperties$CrossFilterConfig",
+      "defaultValue": "*"
+    },
+    {
+      "name": "arthur.cross.allowed-origin",
+      "type": "java.lang.String",
+      "sourceType": "autoconfigure.com.arthur.gateway.ArthurProperties$CrossFilterConfig",
+      "defaultValue": "*"
+    },
+    {
+      "name": "arthur.cross.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "autoconfigure.com.arthur.gateway.ArthurProperties$CrossFilterConfig",
+      "defaultValue": true
+    },
+    {
+      "name": "arthur.cross.max-age",
+      "type": "java.lang.String",
+      "sourceType": "autoconfigure.com.arthur.gateway.ArthurProperties$CrossFilterConfig",
+      "defaultValue": "18000"
+    },
+    {
+      "name": "arthur.exclude.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "autoconfigure.com.arthur.gateway.ArthurProperties$ExcludePathConfig",
+      "defaultValue": false
+    },
+    {
+      "name": "arthur.exclude.paths",
+      "type": "java.util.Set<java.lang.String>",
+      "sourceType": "autoconfigure.com.arthur.gateway.ArthurProperties$ExcludePathConfig"
+    },
+    {
+      "name": "arthur.fallback.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "autoconfigure.com.arthur.gateway.ArthurProperties$FallbackPath",
+      "defaultValue": false
+    },
+    {
+      "name": "arthur.fallback.path",
+      "type": "java.lang.String",
+      "sourceType": "autoconfigure.com.arthur.gateway.ArthurProperties$FallbackPath"
+    },
+    {
+      "name": "arthur.file.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "autoconfigure.com.arthur.gateway.ArthurProperties$FileConfig",
+      "defaultValue": true
+    },
+    {
+      "name": "arthur.file.max-size",
+      "type": "java.lang.Integer",
+      "sourceType": "autoconfigure.com.arthur.gateway.ArthurProperties$FileConfig",
+      "defaultValue": 10
+    },
+    {
+      "name": "arthur.local.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "autoconfigure.com.arthur.gateway.ArthurProperties$Local",
+      "defaultValue": true
+    },
+    {
+      "name": "arthur.local.local-secret-key",
+      "type": "java.lang.String",
+      "description": "加密字符串",
+      "sourceType": "autoconfigure.com.arthur.gateway.ArthurProperties$Local"
+    },
+    {
+      "name": "netty.tcp.select-count",
+      "type": "java.lang.Integer",
+      "sourceType": "autoconfigure.com.arthur.gateway.NettyTcpProperties",
+      "defaultValue": 1
+    },
+    {
+      "name": "netty.tcp.server-socket-channel.alloc-type",
+      "type": "java.lang.String",
+      "description": "options: unpooled or pooled.",
+      "sourceType": "autoconfigure.com.arthur.gateway.NettyTcpProperties$ServerSocketChannelProperties",
+      "defaultValue": "pooled"
+    },
+    {
+      "name": "netty.tcp.server-socket-channel.auto-read",
+      "type": "java.lang.Boolean",
+      "sourceType": "autoconfigure.com.arthur.gateway.NettyTcpProperties$ServerSocketChannelProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "netty.tcp.server-socket-channel.connect-timeout-millis",
+      "type": "java.lang.Integer",
+      "sourceType": "autoconfigure.com.arthur.gateway.NettyTcpProperties$ServerSocketChannelProperties",
+      "defaultValue": 10000
+    },
+    {
+      "name": "netty.tcp.server-socket-channel.so-backlog",
+      "type": "java.lang.Integer",
+      "sourceType": "autoconfigure.com.arthur.gateway.NettyTcpProperties$ServerSocketChannelProperties",
+      "defaultValue": 128
+    },
+    {
+      "name": "netty.tcp.server-socket-channel.so-rcv-buf",
+      "type": "java.lang.Integer",
+      "sourceType": "autoconfigure.com.arthur.gateway.NettyTcpProperties$ServerSocketChannelProperties",
+      "defaultValue": 87380
+    },
+    {
+      "name": "netty.tcp.server-socket-channel.so-reuse-addr",
+      "type": "java.lang.Boolean",
+      "sourceType": "autoconfigure.com.arthur.gateway.NettyTcpProperties$ServerSocketChannelProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "netty.tcp.server-socket-channel.write-buffer-high-water-mark",
+      "type": "java.lang.Integer",
+      "sourceType": "autoconfigure.com.arthur.gateway.NettyTcpProperties$ServerSocketChannelProperties",
+      "defaultValue": 65536
+    },
+    {
+      "name": "netty.tcp.server-socket-channel.write-buffer-low-water-mark",
+      "type": "java.lang.Integer",
+      "sourceType": "autoconfigure.com.arthur.gateway.NettyTcpProperties$ServerSocketChannelProperties",
+      "defaultValue": 32768
+    },
+    {
+      "name": "netty.tcp.server-socket-channel.write-spin-count",
+      "type": "java.lang.Integer",
+      "sourceType": "autoconfigure.com.arthur.gateway.NettyTcpProperties$ServerSocketChannelProperties",
+      "defaultValue": 16
+    },
+    {
+      "name": "netty.tcp.socket-channel.alloc-type",
+      "type": "java.lang.String",
+      "description": "options: unpooled or pooled.",
+      "sourceType": "autoconfigure.com.arthur.gateway.NettyTcpProperties$SocketChannelProperties",
+      "defaultValue": "pooled"
+    },
+    {
+      "name": "netty.tcp.socket-channel.allow-half-closure",
+      "type": "java.lang.Boolean",
+      "sourceType": "autoconfigure.com.arthur.gateway.NettyTcpProperties$SocketChannelProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "netty.tcp.socket-channel.auto-read",
+      "type": "java.lang.Boolean",
+      "sourceType": "autoconfigure.com.arthur.gateway.NettyTcpProperties$SocketChannelProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "netty.tcp.socket-channel.connect-timeout-millis",
+      "type": "java.lang.Integer",
+      "sourceType": "autoconfigure.com.arthur.gateway.NettyTcpProperties$SocketChannelProperties",
+      "defaultValue": 10000
+    },
+    {
+      "name": "netty.tcp.socket-channel.ip-tos",
+      "type": "java.lang.Integer",
+      "sourceType": "autoconfigure.com.arthur.gateway.NettyTcpProperties$SocketChannelProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "netty.tcp.socket-channel.so-keep-alive",
+      "type": "java.lang.Boolean",
+      "sourceType": "autoconfigure.com.arthur.gateway.NettyTcpProperties$SocketChannelProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "netty.tcp.socket-channel.so-linger",
+      "type": "java.lang.Integer",
+      "sourceType": "autoconfigure.com.arthur.gateway.NettyTcpProperties$SocketChannelProperties",
+      "defaultValue": -1
+    },
+    {
+      "name": "netty.tcp.socket-channel.so-rcv-buf",
+      "type": "java.lang.Integer",
+      "sourceType": "autoconfigure.com.arthur.gateway.NettyTcpProperties$SocketChannelProperties",
+      "defaultValue": 87380
+    },
+    {
+      "name": "netty.tcp.socket-channel.so-reuse-addr",
+      "type": "java.lang.Boolean",
+      "sourceType": "autoconfigure.com.arthur.gateway.NettyTcpProperties$SocketChannelProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "netty.tcp.socket-channel.so-snd-buf",
+      "type": "java.lang.Integer",
+      "sourceType": "autoconfigure.com.arthur.gateway.NettyTcpProperties$SocketChannelProperties",
+      "defaultValue": 16384
+    },
+    {
+      "name": "netty.tcp.socket-channel.tcp-no-delay",
+      "type": "java.lang.Boolean",
+      "sourceType": "autoconfigure.com.arthur.gateway.NettyTcpProperties$SocketChannelProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "netty.tcp.socket-channel.write-buffer-high-water-mark",
+      "type": "java.lang.Integer",
+      "sourceType": "autoconfigure.com.arthur.gateway.NettyTcpProperties$SocketChannelProperties",
+      "defaultValue": 65536
+    },
+    {
+      "name": "netty.tcp.socket-channel.write-buffer-low-water-mark",
+      "type": "java.lang.Integer",
+      "sourceType": "autoconfigure.com.arthur.gateway.NettyTcpProperties$SocketChannelProperties",
+      "defaultValue": 32768
+    },
+    {
+      "name": "netty.tcp.socket-channel.write-spin-count",
+      "type": "java.lang.Integer",
+      "sourceType": "autoconfigure.com.arthur.gateway.NettyTcpProperties$SocketChannelProperties",
+      "defaultValue": 16
+    },
+    {
+      "name": "netty.tcp.web-server-factory-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "autoconfigure.com.arthur.gateway.NettyTcpProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "netty.tcp.worker-count",
+      "type": "java.lang.Integer",
+      "sourceType": "autoconfigure.com.arthur.gateway.NettyTcpProperties"
+    }
+  ],
+  "hints": []
+}

@@ -1,0 +1,12 @@
+# Application AutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.arthur.boot.autoconfigure.ApplicationLifecycleAutoConfiguration,\
+com.arthur.boot.autoconfigure.ArthurBootAutoConfiguration
+
+# Application Context Initializers
+org.springframework.context.ApplicationContextInitializer=\
+com.arthur.boot.context.ApplicationContextHolder
+
+# PropertySource Loaders
+org.springframework.boot.env.PropertySourceLoader=\
+com.arthur.boot.env.JsonPropertySourceLoader

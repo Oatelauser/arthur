@@ -1,0 +1,58 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      # 基本属性
+      name: prod
+      url: jdbc:mysql://192.168.5.154:3306/gateway?serverTimezone=Asia/Shanghai&useLegacyDatetimeCode=false&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&autoReconnect=true&useSSL=false
+      username: root
+      password: 'broadtech'
+      driverClassName: com.mysql.cj.jdbc.Driver
+      # 异步初始化initial-size连接
+      async-init: true
+      initial-size: 10
+      # 最小、最大连接
+      min-idle: 50
+      max-active: 50
+      # 最大连接等待时间
+      max-wait: 60000
+
+      # 配置一个连接在池中最小、最大生存的时间，单位是毫秒
+      min-evictable-idle-time-millis: 600000
+      max-evictable-idle-time-millis: 900000
+
+      # 用于控制当OnFatalError发生时最大使用连接数量
+      # 用于控制异常发生时并发执行SQL的数量，减轻数据库恢复的压力
+      on-fatal-error-max-active: 1
+
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      time-between-eviction-runs-millis: 60000
+
+      # 连接的可用性检查，适用于mysql、oracle
+      validation-query: SELECT 1 FROM DUAL
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+
+      # keepalive
+      keep-alive: true
+      phy-max-use-count: 100000
+
+      # filter
+      filters: stat
+      filter:
+        stat:
+          enabled: true
+          db-type: mysql
+          log-slow-sql: true
+          slow-sql-millis: 2000
+          merge-sql: true
+      stat-view-servlet:
+        enabled: true
+        url-pattern: "/druid/*"
+        login-username: brd
+        login-password: zaq1.;[=
+      web-stat-filter:
+        enabled: true
+        url-pattern: "/*"
+        exclusions: "*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*"

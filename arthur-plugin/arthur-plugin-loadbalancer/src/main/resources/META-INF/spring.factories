@@ -1,0 +1,6 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.arthur.plugin.loadbalance.autoconfigure.ArthurLoadBalancerAutoConfiguration,\
+com.arthur.plugin.loadbalance.autoconfigure.LoadBalancerClientFactoryAutoConfiguration
+
+org.springframework.boot.env.EnvironmentPostProcessor=\
+com.arthur.plugin.loadbalance.filter.GatewayLoadBalancerFilter

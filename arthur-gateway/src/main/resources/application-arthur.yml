@@ -1,0 +1,33 @@
+arthur:
+  cross:
+    enabled: false
+    allowedHeaders:
+    allowedMethods: "*"
+    allowedOrigin: "*"
+    allowedExpose: "*"
+    maxAge: "18000"
+    allowCredentials: true
+  file:
+    enabled: true
+    maxSize: 10
+  exclude:
+    enabled: true
+    paths:
+      - /favicon.ico
+  fallback:
+    enabled: true
+  local:
+    enabled: true
+    local-secret-key:
+  accesslog:
+    enabled: true
+  route:
+    multiRoute:
+      enabled: true
+  config:
+    nacos:
+      enabled: true
+      url: ${spring.cloud.nacos.server-addr}
+      username: ${spring.cloud.nacos.username}
+      password: ${spring.cloud.nacos.password}
+

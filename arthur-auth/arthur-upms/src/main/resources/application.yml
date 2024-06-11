@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: arthur-upms
+  profiles:
+    group:
+      prod: log, actuator, undertow, database
+    active: prod
+  cloud:
+    nacos:
+      username: nacos
+      password: nacos
+      server-addr: 192.168.5.153:8848
+      discovery:
+        instance-enabled: false
+        failure-tolerance-enabled: true
+  lifecycle:
+    timeout-per-shutdown-phase: 20s
+  mvc:
+    servlet:
+      load-on-startup: 1
+server:
+  shutdown: GRACEFUL
+  port: 9090

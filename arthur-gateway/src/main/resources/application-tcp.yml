@@ -1,0 +1,31 @@
+netty:
+  tcp:
+    # set to false, user can custom the netty tcp server config.
+#    select-count: 1
+#    worker-count: 4
+    web-server-factory-enabled: true
+    server-socket-channel:
+      so-reuse-addr: false
+      alloc-type: "pooled"
+      auto-read: true
+      write-spin-count: 16
+      write-buffer-low-water-mark: 32768
+      write-buffer-high-water-mark: 65536
+      connect-timeout-millis: 10000
+      so-backlog: 128
+      so-rcv-buf: 87380
+    socket-channel:
+      so-reuse-addr: false
+      alloc-type: "pooled"
+      auto-read: true
+      write-spin-count: 16
+      write-buffer-low-water-mark: 32768
+      write-buffer-high-water-mark: 65536
+      connect-timeout-millis: 10000
+      allow-half-closure: false
+      ip-tos: 0
+      so-snd-buf: 16384
+      so-rcv-buf: 87380
+      tcp-no-delay: true
+      so-linger: -1
+      so-keep-alive: false

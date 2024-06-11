@@ -1,0 +1,56 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: env
+    jmx:
+      exposure:
+        exclude: "*"
+  info:
+    env:
+      enabled: true
+  endpoint:
+    health:
+      # 强制开启健康探测，也就是存活探针、就绪探针
+      probes:
+        enabled: true
+      show-details: always
+  health:
+    # 存活探针
+    livenessstate:
+      enabled: true
+    # 就绪探针
+    readinessstate:
+      enabled: true
+info:
+  app:
+    name: Arthur Admin Application
+    api:
+      version: 1.0.0
+    deportment:
+      - name: Dear Yang
+        email: 545896770@qq.com
+      - name: Yuan Yi
+        email: XXXX
+
+
+
+#后续删除
+#admin client
+spring:
+  boot:
+    admin:
+      client:
+        url: http://192.168.44.1:18080
+        instance:
+          prefer-ip: true # 使用ip
+#damin log
+logging:
+  file:
+    name: "E:\\GITHUP\\arthur\\logs\\access_log.log"
+  pattern:
+    file: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p) %clr(${PID}){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n%wEx"
+
+
+

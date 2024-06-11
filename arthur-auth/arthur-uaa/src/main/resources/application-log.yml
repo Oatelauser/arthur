@@ -1,0 +1,5 @@
+logging:
+  file:
+    name: ${spring.application.name}
+    path: logs
+  config: classpath:log4j2-spring.xml

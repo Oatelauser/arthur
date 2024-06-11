@@ -1,0 +1,11 @@
+spring:
+    data:
+      redis:
+        database: 0
+        host: 192.168.5.153
+        port: 6379
+        timeout: 3000
+    #    password: 123456
+        client-type: lettuce
+        lettuce:
+          shutdown-timeout: 1000

@@ -1,0 +1,28 @@
+jetcache:
+  statIntervalMinutes: 15                 #统一间隔
+  areaInCacheName: false                  #设置不把areaName作为Key前缀
+  local:
+    default:
+      type: caffeine                #缓存类型
+      limit: 100
+      keyConvertor: fastjson        #Key转换器的全局变量
+      expireAfterWriteInMillis: 100000
+  remote:
+    default:
+      type: redis.lettuce
+      keyConvertor: fastjson
+      valueEncoder: kryo
+      valueDecoder: kryo
+      uri: redis://123456@192.168.137.102:6379/1?timeout=5s
+      poolConfig:
+        minIdle: 5
+        maxIdle: 20
+        maxTotal: 50
+
+spring:
+  redis:
+    database: 0
+    port: 6379
+    host: 192.168.5.153
+    password: 123456
+

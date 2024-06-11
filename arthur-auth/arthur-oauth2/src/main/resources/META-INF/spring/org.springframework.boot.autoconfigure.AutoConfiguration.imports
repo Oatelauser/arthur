@@ -1,0 +1,6 @@
+com.arthur.oauth2.autoconfigure.OpenFeignAutoConfiguration
+com.arthur.oauth2.autoconfigure.OAuth2AopAutoConfiguration
+com.arthur.oauth2.autoconfigure.OAuth2CacheAutoConfiguration
+com.arthur.oauth2.autoconfigure.OAuth2ResourceServerAutoConfiguration
+com.arthur.oauth2.autoconfigure.SecurityMessageSourceAutoConfiguration
+com.arthur.oauth2.autoconfigure.OAuth2AuthorizationServerAutoConfiguration

@@ -1,0 +1,41 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - metrics
+          - info
+        exclude:
+          - env
+          - gateway
+          - shutdown
+    jmx:
+      exposure:
+        exclude: "*"
+  info:
+    env:
+      enabled: true
+  endpoint:
+    health:
+      # 强制开启健康探测，也就是存活探针、就绪探针
+      probes:
+        enabled: true
+      show-details: always
+  health:
+    # 存活探针
+    livenessstate:
+      enabled: true
+    # 就绪探针
+    readinessstate:
+      enabled: true
+info:
+  app:
+    name: Arthur
+    api:
+      version: 1.0.0
+    deportment:
+      - name: Dear Yang
+        email: 545896770@qq.com
+      - name: Yuan Yi
+        email: XXXX

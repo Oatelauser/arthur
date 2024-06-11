@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE suppressions PUBLIC
+        "-//Puppy Crawl//DTD Suppressions 1.1//EN"
+        "http://www.puppycrawl.com/dtds/suppressions_1_1.dtd">
+
+<suppressions>
+
+    <suppress checks="IllegalTokenText" files="CustomizedThrowableProxyRenderer.java"/>
+    <suppress checks="IllegalTokenText" files="JsonUtils.java"/>
+    <suppress checks="AvoidStarImport" files="JsonUtils.java"/>
+    <suppress checks="IllegalTokenText" files="CollectionUtils.java"/>
+    <suppress checks="ReturnCount" files="CollectionUtils.java"/>
+    <suppress checks="JavadocMethod" files="CollectionUtils.java"/>
+    <suppress checks="MagicNumber" files="CollectionUtils.java"/>
+    <suppress checks="MagicNumber" files="CollectionUtils.java"/>
+    <suppress checks="JavadocMethod" files="Assert.java"/>
+    <suppress checks="AvoidStarImport" files="ClassUtils.java"/>
+    <suppress checks="MagicNumber" files="ClassUtils.java"/>
+    <suppress checks="ReturnCount" files="ClassUtils.java"/>
+    <suppress checks="JavadocMethod" files="ClassUtils.java"/>
+    <suppress checks="MethodLength" files="ClassUtils.java"/>
+
+</suppressions>

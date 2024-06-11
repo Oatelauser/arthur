@@ -1,0 +1,2 @@
+com.arthur.plugin.loadbalance.autoconfigure.ArthurLoadBalancerAutoConfiguration
+com.arthur.plugin.loadbalance.autoconfigure.LoadBalancerClientFactoryAutoConfiguration

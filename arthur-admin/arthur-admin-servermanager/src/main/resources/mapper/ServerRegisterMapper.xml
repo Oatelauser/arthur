@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.broadtech.arthur.admin.register.infrastructure.db.mapper.ServerRegisterMapper">
+
+    <resultMap id="BaseResultMap" type="com.broadtech.arthur.admin.register.infrastructure.db.po.ServerRegisterPo">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="serverName" column="server_name" jdbcType="VARCHAR"/>
+        <result property="groupName" column="group_name" jdbcType="VARCHAR"/>
+        <result property="ip" column="ip" jdbcType="VARCHAR"/>
+        <result property="port" column="port" jdbcType="INTEGER"/>
+        <result property="clusterName" column="cluster_name" jdbcType="VARCHAR"/>
+        <result property="createAt" column="create_at" jdbcType="TIMESTAMP"/>
+        <result property="updateAt" column="update_at" jdbcType="TIMESTAMP"/>
+        <result property="action" column="action" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id
+        ,server_name,group_name,
+        ip,port,cluster_name,
+        create_at,update_at,action
+    </sql>
+</mapper>

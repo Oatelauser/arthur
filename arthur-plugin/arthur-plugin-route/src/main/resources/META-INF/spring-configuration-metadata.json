@@ -1,0 +1,44 @@
+{
+  "groups": [
+    {
+      "name": "arthur.route",
+      "type": "autoconfigure.route.com.arthur.plugin.ArthurRouteProperties",
+      "sourceType": "autoconfigure.route.com.arthur.plugin.ArthurRouteProperties"
+    },
+    {
+      "name": "arthur.route.meta",
+      "type": "autoconfigure.route.com.arthur.plugin.ArthurRouteProperties$MultiRoute",
+      "sourceType": "autoconfigure.route.com.arthur.plugin.ArthurRouteProperties",
+      "sourceMethod": "getMeta()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "arthur.route.data-id",
+      "type": "java.lang.String",
+      "sourceType": "autoconfigure.route.com.arthur.plugin.ArthurRouteProperties"
+    },
+    {
+      "name": "arthur.route.group",
+      "type": "java.lang.String",
+      "sourceType": "autoconfigure.route.com.arthur.plugin.ArthurRouteProperties"
+    },
+    {
+      "name": "arthur.route.meta.data-id",
+      "type": "java.lang.String",
+      "sourceType": "autoconfigure.route.com.arthur.plugin.ArthurRouteProperties$MultiRoute"
+    },
+    {
+      "name": "arthur.route.meta.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "autoconfigure.route.com.arthur.plugin.ArthurRouteProperties$MultiRoute",
+      "defaultValue": false
+    },
+    {
+      "name": "arthur.route.meta.group",
+      "type": "java.lang.String",
+      "sourceType": "autoconfigure.route.com.arthur.plugin.ArthurRouteProperties$MultiRoute"
+    }
+  ],
+  "hints": []
+}

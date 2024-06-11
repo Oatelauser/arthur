@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: arthur-auth
+  profiles:
+    group:
+      prod: jetcache, db, cloud
+    active: prod
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+server:
+  port: 18711
+

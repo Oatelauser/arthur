@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.arthur.plugin.circuitbreaker.autoconfigure.GatewayRateLimiterAutoConfiguration
+
+org.springframework.boot.env.EnvironmentPostProcessor=\
+com.arthur.plugin.circuitbreaker.filter.factory.RateLimiterGatewayFilterFactory

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper  namespace="com.broadtech.arthur.admin.rule.mapper.api.ApiMapper">
+
+    <resultMap id="BaseResultMap" type="com.broadtech.arthur.admin.rule.entiry.api.po.ApiRule">
+            <id property="id" column="id" jdbcType="VARCHAR"/>
+            <id property="groupId" column="group_id" jdbcType="VARCHAR"/>
+            <result property="apiName" column="api_name" jdbcType="VARCHAR"/>
+            <result property="apiPredicateItem" column="api_predicate_item" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,group_id,api_name,api_predicate_item
+    </sql>
+</mapper>

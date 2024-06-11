@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.broadtech.arthur.admin.auth.mapper.UserMapper">
+
+
+    <resultMap id="User_Permissions" type="com.broadtech.arthur.admin.auth.entity.UserPermissionInfo">
+        <result property="id" column="id" jdbcType="VARCHAR"/>
+        <result property="userName" column="user_name" jdbcType="VARCHAR"/>
+        <result property="userPassword" column="user_password" jdbcType="VARCHAR"/>
+        <result property="menuCode" column="menu_code" jdbcType="VARCHAR"/>
+        <result property="permission" column="permission" jdbcType="VARCHAR"/>
+        <result property="endpoint" column="endpoint" jdbcType="VARCHAR"/>
+        <result property="isDelete" column="is_delete" jdbcType="TINYINT"/>
+    </resultMap>
+    <sql id="User_Permission_Field">
+        r.id
+        ,u.user_name,u.user_password,u.is_delete
+        ,m.menu_code,m.permission,m.endpoint
+    </sql>
+    <!--    查询用户权限通过名字-->
+    <select id="findUserPermissionsByName" resultMap="User_Permissions">
+        select
+        <include refid="User_Permission_Field"/>
+        from user u
+        inner join user_role ur on u.id = ur.u_id
+        inner join role r on ur.r_id = r.id
+        inner join role_menu rm on ur.r_id = rm.r_id
+        inner join menu m on rm.m_id = m.id
+        where u.user_name = #{username}
+    </select>
+
+    <!--    加载用户所有的权限信息-->
+    <select id="loadAllUserPermissions" resultMap="User_Permissions">
+        select
+        <include refid="User_Permission_Field"/>
+        from user u
+        inner join user_role ur on u.id = ur.u_id
+        inner join role r on ur.r_id = r.id
+        inner join role_menu rm on ur.r_id = rm.r_id
+        inner join menu m on rm.m_id = m.id
+    </select>
+</mapper>

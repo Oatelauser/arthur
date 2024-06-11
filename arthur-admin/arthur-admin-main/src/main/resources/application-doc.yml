@@ -1,0 +1,12 @@
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    path: /arthur/api-docs
+    enabled: true
+  packages-to-scan:
+    - com.broadtech.arthur.admin.route.controller
+    - com.broadtech.arthur.admin.group.controller
+    - com.broadtech.arthur.admin.rule.controller
+

@@ -1,0 +1,82 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      httpclient:
+        compression: true
+        response-timeout: PT30S
+        connect-timeout: 2000
+        pool:
+          max-idle-time: PT1S
+        ssl:
+          use-insecure-trust-manager: true
+          handshake-timeout: 10000
+          close-notify-flush-timeout: 3000
+          close-notify-read-timeout: 0
+      filter:
+        hystrix:
+          enabled: false
+#        request-rate-limiter:
+#          enabled: false
+#      global-filter:
+#        reactive-load-balancer-client:
+#          enabled: false
+      global-cors:
+        # 解决Option请求被拦截
+        add-to-simple-url-handler-mapping: true
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+              - GET
+              - HEAD
+              - POST
+              - PUT
+              - DELETE
+              - TRACE
+              - OPTIONS
+              - PATCH
+            allowedHeaders: "*"
+            maxAge: 18000
+      routes:
+        - id: USER
+          uri: lb://arthur-user
+          predicates:
+            - Path=/user/**
+#          metadata:
+          order: -1
+          weight: 50
+          warmup: 60000
+          lb: WeightedRoundRobin
+          filters:
+            - name: Ssl
+              args:
+                crl: classpath:a.crl
+                key-store-type: PKCS12
+                key-store: classpath:b.pfx
+                key-alias: private_key
+                key-store-password: GfUNDsVGRqFpui0l83ur1
+#          args:
+#            lb-express: requestData.getUrl().toString()
+#        - id: demo-consumer1
+#          uri: lb://demo-consumer1
+#          predicates:
+#            - Path=/demo-consumer1/**
+#          filters:
+#            - name: RequestMappingRateLimiter
+#              args:
+#                rate-limit-algorithm: token_bucket_rate_limiter
+#                redis-rate-limiter.replenishRate: 1
+#                redis-rate-limiter.burstCapacity: 1
+#                redis-rate-limiter.requestedTokens: 1
+      default-filters:
+        # 去掉前缀
+        - StripPrefix=1
+        - PreserveHostHeader
+    loadbalancer:
+      cache:
+        ttl: 5
+        capacity: 256

@@ -1,0 +1,79 @@
+spring:
+  application:
+    name: arthur-admin
+  profiles:
+    group:
+      prod: log, undertow, db, actuator, doc
+    active: prod
+  lifecycle:
+    timeout-per-shutdown-phase: 20s
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.5.153:8848
+        username: nacos
+        password: nacos
+        group: gateway
+        enabled: false
+      config:
+        server-addr: 192.168.5.153:8848
+        username: nacos
+        password: nacos
+        group: gateway
+        enabled: false
+    sentinel:
+      transport:
+        dashboard: 192.168.44.1:8080
+        port: 8811
+        clientIp: 192.168.44.1
+  jackson:
+    default-property-inclusion: non_null
+
+server:
+  shutdown: GRACEFUL
+  port: 8810
+
+arthur:
+  config:
+    nacos:
+      enabled: true
+      url:  ${spring.cloud.nacos.config.server-addr}
+      username: ${spring.cloud.nacos.config.username}
+      password: ${spring.cloud.nacos.config.password}
+  meta:
+    group:
+      dataId: arthur-dynamic-meta.json
+      group: META_GROUP
+      namespace: "public"
+      dataType: json
+    api:
+      dataId: sentinel-api-rules.json
+      group: META_GROUP
+      namespace: "public"
+      dataType: json
+    flow:
+      dataId: sentinel-flow-rules.json
+      group: GATEWAY_SENTINEL_GROUP
+      namespace: "public"
+      dataType: json
+    system:
+      dataId: sentinel-system-rules.json
+      group: GATEWAY_SENTINEL_GROUP
+      namespace: "public"
+      dataType: json
+    degrade:
+      dataId: sentinel-degrade-rules.json
+      group: GATEWAY_SENTINEL_GROUP
+      namespace: "public"
+      dataType: json
+
+
+cache:
+  expired:
+    write: 5
+    writeTimeGranularity: MINUTES
+    access: 5
+    accessTimeGranularity: MINUTES
+
+
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.arthur.auth.upms.mapper.OAuth2ClientDetailMapper">
+
+    <resultMap id="BaseResultMap" type="com.arthur.auth.user.domain.entity.OAuth2ClientDetail">
+		<id property="clientId" column="client_id" jdbcType="VARCHAR"/>
+		<result property="resourceIds" column="resource_ids" jdbcType="VARCHAR"/>
+		<result property="clientSecret" column="client_secret" jdbcType="VARCHAR"/>
+		<result property="scope" column="scope" jdbcType="VARCHAR"/>
+		<result property="grantTypes" column="authorized_grant_types" jdbcType="VARCHAR"/>
+		<result property="redirectUri" column="web_server_redirect_uri" jdbcType="VARCHAR"/>
+		<result property="authorities" column="authorities" jdbcType="VARCHAR"/>
+		<result property="tokenLiveTime" column="token_live_time" jdbcType="VARCHAR"/>
+		<result property="refreshTokenLiveTime" column="refresh_token_live_time" jdbcType="VARCHAR"/>
+		<result property="additionalInformation" column="additional_information" jdbcType="VARCHAR"/>
+		<result property="autoApprove" column="auto_approve" jdbcType="VARCHAR"/>
+		<result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+		<result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        client_id,resource_ids,client_secret,
+        scope,authorized_grant_types,web_server_redirect_uri,
+        authorities,token_live_time,refresh_token_live_time,
+        additional_information,auto_approve,create_time,
+        update_time
+    </sql>
+
+</mapper>

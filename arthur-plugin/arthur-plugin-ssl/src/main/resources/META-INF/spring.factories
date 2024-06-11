@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.arthur.plugin.ssl.autoconfigure.ArthurSslAutoConfiguration
+
+org.springframework.boot.env.EnvironmentPostProcessor=\
+com.arthur.plugin.ssl.filter.SslNettyRoutingFilter

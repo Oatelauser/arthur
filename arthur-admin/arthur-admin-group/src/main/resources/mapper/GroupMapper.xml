@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.broadtech.arthur.admin.group.mapper.GroupMapper">
+
+    <resultMap id="BaseResultMap" type="com.broadtech.arthur.admin.group.entity.po.Group">
+        <id property="id" column="id" jdbcType="VARCHAR"/>
+        <result property="uid" column="uid" jdbcType="VARCHAR"/>
+        <result property="confDataId" column="conf_data_id" jdbcType="VARCHAR"/>
+        <result property="confDataType" column="conf_data_type" jdbcType="VARCHAR"/>
+        <result property="confGroupId" column="conf_group_id" jdbcType="VARCHAR"/>
+        <result property="confNameSpace" column="conf_name_space" jdbcType="VARCHAR"/>
+        <result property="maxInsertSize" column="max_insert_size" jdbcType="INTEGER"/>
+        <result property="groupName" column="group_name" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id
+        ,uid,conf_data_id,conf_data_type,
+        conf_group_id,conf_name_space,max_insert_size,
+        group_name
+    </sql>
+</mapper>
